@@ -1,0 +1,14 @@
+.ticker {
+    margin-bottom: space(8);
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    &__element {
+        p {
+            font-size: 40px;
+            font-weight: bold;
+            font-stretch: condensed;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+    }
+}

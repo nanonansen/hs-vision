@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Univers";
+    src: url("../../assets/UniversLTW04-55Roman.woff2") format("woff2"),
+        url("../../assets/UniversLTW04-55Roman.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Univers";
+    font-weight: bold;
+    src: url("../../assets/UniversLTW04-65Bold.woff2") format("woff2"),
+        url("../../assets/UniversLTW04-65Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "Univers";
+    font-weight: bold;
+    font-stretch: condensed;
+    src: url("../../assets/UniversLTW04-67BoldCond.woff2") format("woff2"),
+        url("../../assets/UniversLTW04-67BoldCond.woff") format("woff");
+}

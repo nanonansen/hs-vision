@@ -1,0 +1,32 @@
+// Media Mixin
+@mixin mq($size) {
+    //Until Tablet
+    @if $size == sm {
+        @media (min-width: #{$sm}) {
+            @content;
+        }
+    }
+    // Break on Tablet
+    @else if $size == md {
+        @media (min-width: #{$md}) {
+            @content;
+        }
+    }
+    // Break on Desktop
+    @else if $size == lg {
+        @media (min-width: #{$lg}) {
+            @content;
+        }
+    }
+    // Break on Desktop Large
+    @else if $size == xl {
+        @media (min-width: #{$xl}) {
+            @content;
+        }
+    }
+}
+
+// Spacing Function
+@function space($num) {
+    @return $num * 8 + px;
+}

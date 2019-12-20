@@ -1,0 +1,27 @@
+.quote {
+    padding: 0 space(2);
+    margin-bottom: space(8);
+
+    &__text {
+        font-size: 40px;
+        font-weight: bold;
+        font-stretch: condensed;
+        line-height: 1.35;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        text-align: center;
+        //padding: 0px 0 0 8px;
+        margin-bottom: space(2);
+        color: $black;
+
+        .highlight {
+            // background: $black;
+            border-bottom: 5px solid #000;
+
+            //box-shadow: 8px 0 0 $black, -8px 0 0 $black;
+        }
+    }
+    .share {
+        border-bottom: 1px solid #000;
+    }
+}

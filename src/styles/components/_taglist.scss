@@ -1,0 +1,10 @@
+.tag-carousel {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    padding: space(1) space(1) space(3) space(1);
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 8px 0 8px;
+    // position: sticky;
+    // top: 0;
+}
