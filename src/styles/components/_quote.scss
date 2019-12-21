@@ -1,9 +1,17 @@
 .quote {
-    padding: 0 space(2);
-    margin-bottom: space(8);
-
+    padding: space(6) space(2);
+    border-top: 1px solid $black;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     &__text {
-        font-size: 40px;
+        font-size: 32px;
         font-weight: bold;
         font-stretch: condensed;
         line-height: 1.35;
@@ -11,12 +19,12 @@
         text-transform: uppercase;
         text-align: center;
         //padding: 0px 0 0 8px;
-        margin-bottom: space(2);
+        margin-bottom: space(6);
         color: $black;
 
         .highlight {
             // background: $black;
-            border-bottom: 5px solid #000;
+            border-bottom: 3px solid #000;
 
             //box-shadow: 8px 0 0 $black, -8px 0 0 $black;
         }

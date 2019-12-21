@@ -1,14 +1,31 @@
+.marquee {
+    &--image {
+        .ticker {
+            &__element {
+                img {
+                    width: 100px;
+                    height: 70px;
+                    margin: 0 24px;
+                }
+            }
+        }
+    }
+}
+
 .ticker {
-    margin-bottom: space(8);
-    border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
+    margin-bottom: space(1);
+    height: 72px;
+
     &__element {
+        border: 1px solid $black;
+        border-radius: 100px;
         p {
             font-size: 40px;
             font-weight: bold;
             font-stretch: condensed;
             text-transform: uppercase;
             white-space: nowrap;
+            margin: 0 24px;
         }
     }
 }

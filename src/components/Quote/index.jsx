@@ -1,4 +1,5 @@
 import React from "react";
+import Vertical from "../Vertical";
 
 const Quote = ({ content }) => {
     return (
@@ -7,7 +8,7 @@ const Quote = ({ content }) => {
                 <h2 className="quote__text">
                     <span className="highlight">{content.title}</span>
                 </h2>
-                {/* <span className="share">Read More</span> */}
+                <Vertical>{content.tag}</Vertical>
             </div>
         </div>
     );

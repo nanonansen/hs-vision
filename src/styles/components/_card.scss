@@ -1,6 +1,6 @@
 .card {
-    margin-bottom: space(8);
-    padding: 0 space(1);
+    margin-bottom: space(6);
+    padding: 0;
 
     &__image {
         img {
@@ -13,18 +13,14 @@
         margin-bottom: space(2);
     }
     &__inner {
-        padding: space(2) space(2) 0 space(0);
+        padding: space(2) space(2) 0 space(2);
     }
     &__footer {
         display: flex;
         justify-content: flex-start;
         align-items: center;
     }
-    .vertical {
-        text-transform: uppercase;
-        font-size: 16px;
-        letter-spacing: 0.5px;
-    }
+
     .share {
         border-bottom: 1px solid #000;
         text-transform: uppercase;
