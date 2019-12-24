@@ -2,7 +2,11 @@ body.noscroll {
     overflow: hidden;
 }
 .navmenu {
-    height: calc(100vh - 170px);
+    position: fixed;
+    height: calc(100vh - 64px);
+    // height: calc(100vh - 170px);
+    width: 100%;
+    background: $white;
     &__inner {
         height: 100%;
     }
