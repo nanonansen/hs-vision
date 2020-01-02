@@ -32,14 +32,14 @@ const FEED_DATA = [
     //     content_type: "text",
     //     direction: "toLeft"
     // },
+
     {
         title:
-            "Meet YOSHI, the 16-Year-Old Visionary Shaking Fashion to Its Core",
+            "Carne Bollente Imagines Famous Historic Couples Making Love For Pre-SS20",
         imgUrl:
-            "https://static.highsnobiety.com/thumbor/o7f8DdWoDAu_uMuDGqECRxAd25c=/fit-in/1200x1500/smart/static.highsnobiety.com/wp-content/uploads/2019/12/09171940/yoshi-interview-05.jpg",
-        type: "custom-shape",
-        clipPath: "M0.5,0 C0.776,0,1,0.079,1,0.176 C1,0.249,0.872,0.313,0.689,0.339 C0.872,0.365,1,0.428,1,0.502 C1,0.574,0.877,0.636,0.7,0.663 C0.877,0.69,1,0.752,1,0.824 C1,0.921,0.776,1,0.5,1 C0.224,1,0,0.921,0,0.824 C0,0.752,0.123,0.69,0.3,0.663 C0.123,0.636,0,0.574,0,0.502 C0,0.428,0.128,0.365,0.311,0.339 C0.128,0.313,0,0.249,0,0.176 C0,0.079,0.224,0,0.5,0",
-        tag: "Feature"
+            "https://static.highsnobiety.com/thumbor/3ELK3Vijm5EyJtDLAH4nDStUpAo=/fit-in/800x1200/smart/static.highsnobiety.com/wp-content/uploads/2019/12/10212245/carne-bollente-pre-ss20-15.jpg",
+        type: "image",
+        tag: "News"
     },
     {
         title:
@@ -49,6 +49,32 @@ const FEED_DATA = [
         type: "image",
         tag: "News"
     },
+    {
+        title:
+            "Carne Bollente Imagines Famous Historic Couples Making Love For Pre-SS20",
+        imgUrl:
+            "https://static.highsnobiety.com/thumbor/3ELK3Vijm5EyJtDLAH4nDStUpAo=/fit-in/800x1200/smart/static.highsnobiety.com/wp-content/uploads/2019/12/10212245/carne-bollente-pre-ss20-15.jpg",
+        type: "image",
+        tag: "News"
+    },
+    {
+        title:
+            "Carne Bollente Imagines Famous Historic Couples Making Love For Pre-SS20",
+        imgUrl:
+            "https://static.highsnobiety.com/thumbor/3ELK3Vijm5EyJtDLAH4nDStUpAo=/fit-in/800x1200/smart/static.highsnobiety.com/wp-content/uploads/2019/12/10212245/carne-bollente-pre-ss20-15.jpg",
+        type: "image",
+        tag: "News"
+    },
+    // {
+    //     title:
+    //         "Meet YOSHI, the 16-Year-Old Visionary Shaking Fashion to Its Core",
+    //     imgUrl:
+    //         "https://static.highsnobiety.com/thumbor/o7f8DdWoDAu_uMuDGqECRxAd25c=/fit-in/1200x1500/smart/static.highsnobiety.com/wp-content/uploads/2019/12/09171940/yoshi-interview-05.jpg",
+    //     type: "custom-shape",
+    //     clipPath:
+    //         "M0.5,0 C0.776,0,1,0.079,1,0.176 C1,0.249,0.872,0.313,0.689,0.339 C0.872,0.365,1,0.428,1,0.502 C1,0.574,0.877,0.636,0.7,0.663 C0.877,0.69,1,0.752,1,0.824 C1,0.921,0.776,1,0.5,1 C0.224,1,0,0.921,0,0.824 C0,0.752,0.123,0.69,0.3,0.663 C0.123,0.636,0,0.574,0,0.502 C0,0.428,0.128,0.365,0.311,0.339 C0.128,0.313,0,0.249,0,0.176 C0,0.079,0.224,0,0.5,0",
+    //     tag: "Feature"
+    // },
     {
         title:
             "Tyler, The Creator Just Dropped GOLF’s Racing-Inspired Winter ’19 Lookbook",

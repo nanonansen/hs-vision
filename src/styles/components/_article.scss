@@ -1,0 +1,47 @@
+.article {
+    &__header {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 space(2);
+    }
+    &__title {
+        font-size: $fs-xl;
+        font-weight: bold;
+        font-stretch: condensed;
+        text-transform: uppercase;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: space(4);
+    }
+    &__content {
+        p {
+            font-size: $fs-base;
+            line-height: 1.5;
+            padding: 0 space(2);
+            margin-bottom: space(2);
+        }
+        p + h2 {
+            margin-bottom: space(3);
+            padding-top: space(4);
+        }
+        p + img {
+            padding-top: space(2);
+        }
+    }
+    &__image {
+        margin-bottom: space(3);
+        background: $light-gray;
+    }
+    h2 {
+        padding: 0 space(2);
+        margin-bottom: space(3);
+        font-size: 24px;
+        font-weight: bold;
+        font-stretch: condensed;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+}

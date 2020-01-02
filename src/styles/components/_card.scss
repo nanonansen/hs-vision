@@ -1,16 +1,47 @@
 .card {
-    margin-bottom: space(6);
+    margin-bottom: space(4);
     padding: 0;
+    &--image {
+    }
+    &--quote {
+        min-height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid $black;
+        text-align: center;
 
+        .card__title {
+            display: none;
+        }
+        .card__footer {
+            justify-content: center;
+        }
+    }
     &__image {
+        background: $light-gray;
         img {
             object-fit: cover;
         }
     }
     &__title {
         line-height: 1.4;
-        // text-transform: uppercase;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
         margin-bottom: space(2);
+        &--quote {
+            min-height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid $black;
+            text-align: center;
+            font-weight: bold;
+            font-size: $fs-xl;
+            font-stretch: condensed;
+            line-height: 1;
+            margin-bottom: 0;
+        }
     }
     &__inner {
         padding: space(2) space(2) 0 space(2);
@@ -26,21 +57,18 @@
         text-transform: uppercase;
     }
 
-    &--gallery {
-        .gallery-wrapper {
-        }
-        .carousel {
-            width: 100%;
-
-            &__main {
-                height: 400px;
-            }
-        }
+    &__quote {
+        font-size: $fs-xl;
+        font-weight: bold;
+        font-stretch: condensed;
+        text-transform: uppercase;
+        line-height: 1;
+        padding: 0 space(2);
     }
-
     .alice-carousel__stage-item {
         height: 0;
         padding-top: 125%;
+        background: $light-gray;
     }
     .slide-image {
         width: 100%;
@@ -64,4 +92,15 @@
             }
         }
     }
+}
+.fade-appear {
+    opacity: 0;
+
+    transition: opacity 400ms ease-out;
+}
+.fade-appear-active {
+    opacity: 1;
+}
+.fade-appear-done {
+    opacity: 1;
 }

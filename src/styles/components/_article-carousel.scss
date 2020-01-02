@@ -1,4 +1,4 @@
-.product-carousel {
+.article-carousel {
     background: $white;
     min-height: 50vh;
     display: flex;
@@ -26,8 +26,8 @@
     &__items {
         overflow: auto;
         white-space: nowrap;
-        padding-left: space(3);
-        padding-right: space(3);
+        padding-left: space(2);
+        padding-right: space(2);
         padding-bottom: space(3);
         scroll-snap-type: x mandatory;
     }

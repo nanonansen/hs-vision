@@ -5,9 +5,10 @@
 }
 
 body {
-    font-size: 15px;
+    font-size: 14px;
     font-family: "Univers", sans-serif;
     line-height: 1.5;
+    min-height: 100vh;
 }
 
 h1,
@@ -29,4 +30,17 @@ li {
 button {
     background: transparent;
     border: none;
+    font-size: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    &:visited,
+    &:focus {
+        text-decoration: none;
+    }
+}
+img {
+    width: 100%;
 }

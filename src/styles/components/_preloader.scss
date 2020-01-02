@@ -1,0 +1,13 @@
+.preloader {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nprogress .bar {
+    background: $black !important;
+}
+#nprogress .peg {
+    box-shadow: none !important;
+}

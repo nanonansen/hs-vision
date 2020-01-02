@@ -4,6 +4,7 @@ import Headroom from "react-headroom";
 import Logo from "../Logo";
 import NavMenu from "../NavMenu";
 import Icon from "../Icon";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [showNav, setShowNav] = useState(false);
@@ -18,7 +19,7 @@ const Header = () => {
     };
 
     return (
-        <Headroom downTolerance={30}>
+        <Headroom>
             <header className="site-header">
                 <div className="site-header__inner">
                     <div className="site-header__menu">
@@ -28,11 +29,16 @@ const Header = () => {
                     </div>
                     <div className="branding">
                         <h1 className="logo">
-                            <Logo />
+                            <Link to={"/"}>
+                                <Logo />
+                            </Link>
                         </h1>
                     </div>
                     <div className="site-header__cart">
-                        <button>1</button>
+                        <button>
+                            {/* <Icon name={"cart"} /> */}
+                            Bag (0)
+                        </button>
                     </div>
                 </div>
                 <NavMenu showNav={showNav} />
