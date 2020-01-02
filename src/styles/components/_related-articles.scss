@@ -1,0 +1,54 @@
+.related-articles {
+    min-height: 50vh;
+    padding-left: space(2);
+    padding-right: space(2);
+    margin-top: space(8);
+
+    &__header {
+        text-transform: uppercase;
+        padding-top: space(0.5);
+        margin-bottom: space(3);
+        border-top: 1px solid $black;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 48.5%;
+        &:first-child {
+            margin-right: 3%;
+        }
+        .image {
+            margin-bottom: space(1);
+        }
+        h3.title {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-transform: uppercase;
+            line-height: 1.1rem;
+            letter-spacing: 0.3px;
+            // &::before {
+            //     position: absolute;
+            //     content: "...";
+            //     bottom: 2px;
+            //     right: 0;
+            //     z-index: 2;
+            // }
+            // &::after {
+            //     content: "";
+            //     position: absolute;
+            //     bottom: 3px;
+            //     right: 0;
+            //     width: 2rem;
+            //     height: 1rem;
+            //     background: white;
+            // }
+        }
+    }
+}

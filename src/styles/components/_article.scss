@@ -1,4 +1,16 @@
+.nextPage-preloader {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: space(8);
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .article {
+    padding-bottom: space(8);
+    border-bottom: 1px solid $black;
     &__header {
         min-height: 50vh;
         display: flex;
@@ -23,15 +35,30 @@
             padding: 0 space(2);
             margin-bottom: space(2);
         }
+        blockquote {
+            margin-top: space(8);
+            margin-bottom: space(8);
+
+            h2 {
+                border-top: 1px solid #000;
+                padding: space(0.5) 0 0 0;
+                margin-left: space(2);
+                margin-right: space(2);
+            }
+        }
+
         p + h2 {
             margin-bottom: space(3);
             padding-top: space(4);
         }
-        p + img {
-            padding-top: space(2);
+        p + figure {
+            margin-top: space(4);
+        }
+        figure + h2 {
+            margin-top: space(8);
         }
     }
-    &__image {
+    .image {
         margin-bottom: space(3);
         background: $light-gray;
     }

@@ -30,6 +30,9 @@
         padding-right: space(2);
         padding-bottom: space(3);
         scroll-snap-type: x mandatory;
+        &:-webkit-scrollbar {
+            display: none;
+        }
     }
 
     &__item {

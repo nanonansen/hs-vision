@@ -57,10 +57,6 @@ const ArticleCarousel = ({ id }) => {
                                         src={article.data.featured_image.url}
                                         crop={"crop"}
                                     />
-
-                                    {/* <h3 className="product-carousel__title">
-                                {product.data.product_title[0].text}
-                            </h3> */}
                                 </div>
                             </div>
                         );

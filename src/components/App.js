@@ -26,7 +26,7 @@ function App() {
                         <Feed />
                     </Route>
                 </Switch>
-                <Footer />
+                {/* <Footer /> */}
             </main>
         </div>
     );
