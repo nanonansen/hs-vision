@@ -15,7 +15,7 @@ const RelatedArticles = ({ category, currentArticleId }) => {
             const response = await Client.query(
                 [
                     Prismic.Predicates.at("document.type", "article"),
-                    Prismic.Predicates.similar(currentArticleId, 5),
+                    // Prismic.Predicates.similar(currentArticleId, 5),
                     Prismic.Predicates.not("document.id", currentArticleId)
                 ],
                 { pageSize: 2, page: 1 }
@@ -25,7 +25,7 @@ const RelatedArticles = ({ category, currentArticleId }) => {
             }
         };
         fetchData();
-    }, []);
+    }, [currentArticleId]);
 
     return (
         <div className="related-articles">

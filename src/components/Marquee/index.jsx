@@ -2,6 +2,8 @@ import React from "react";
 import Ticker from "react-ticker";
 
 const Marquee = ({ content }) => {
+    console.log("content", content);
+
     switch (content.content_type) {
         case "text":
             return (

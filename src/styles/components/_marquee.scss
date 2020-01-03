@@ -13,19 +13,17 @@
 }
 
 .ticker {
-    margin-bottom: space(1);
-    height: 72px;
+    margin-bottom: space(0);
+
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
 
     &__element {
-        border: 1px solid $black;
-        border-radius: 100px;
         p {
-            font-size: 40px;
-            font-weight: bold;
-            font-stretch: condensed;
+            font-size: 14px;
             text-transform: uppercase;
             white-space: nowrap;
-            margin: 0 24px;
+            margin: 12px 4px 14px 0px;
         }
     }
 }

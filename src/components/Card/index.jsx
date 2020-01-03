@@ -10,38 +10,45 @@ import CardMeta from "./CardMeta";
 import ArticleCarousel from "../ArticleCarousel";
 
 const Card = ({ type, content, uid, id }) => {
+    console.log(content.thumbnail_type);
+
     switch (type) {
         case "article":
             return (
-                <CardWrapper>
-                    <Link to={`/article/${uid}`}>
-                        {Object.keys(content.featured_image).length !== 0 ? (
-                            <>
-                                <Image
-                                    src={content.featured_image.url}
-                                    alt={content.featured_image.alt}
-                                />
+                <div className="grid__item grid__item--article">
+                    <CardWrapper type={content.thumbnail_type}>
+                        <Link to={`/article/${uid}`}>
+                            {Object.keys(content.featured_image).length !==
+                            0 ? (
+                                <>
+                                    <Image
+                                        src={content.featured_image.url}
+                                        alt={content.featured_image.alt}
+                                    />
+                                    <CardMeta
+                                        title={content.article_title[0].text}
+                                        category={content.category}
+                                    />
+                                </>
+                            ) : (
                                 <CardMeta
                                     title={content.article_title[0].text}
                                     category={content.category}
+                                    quote
                                 />
-                            </>
-                        ) : (
-                            <CardMeta
-                                title={content.article_title[0].text}
-                                category={content.category}
-                                quote
-                            />
-                        )}
-                    </Link>
-                </CardWrapper>
+                            )}
+                        </Link>
+                    </CardWrapper>
+                </div>
             );
 
         case "article_carousel":
             return (
-                <CardWrapper>
-                    <ArticleCarousel id={id} />
-                </CardWrapper>
+                <div className="grid__item grid__item--article-carousel">
+                    <CardWrapper type={type}>
+                        <ArticleCarousel id={id} />
+                    </CardWrapper>
+                </div>
             );
 
         default:

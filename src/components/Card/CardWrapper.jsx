@@ -1,11 +1,11 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-const CardWrapper = props => {
+const CardWrapper = ({ children, type }) => {
     return (
-        <TransitionGroup>
+        <TransitionGroup component={null}>
             <CSSTransition appear classNames="fade" timeout={500}>
-                <div className="card card--article">{props.children}</div>
+                <div className={"card card--" + type}>{children}</div>
             </CSSTransition>
         </TransitionGroup>
     );

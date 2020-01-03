@@ -3,6 +3,9 @@
 
     overflow: hidden;
     transition: transform 300ms ease-out;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     &__inner {
         height: $header-height;
         display: flex;
@@ -10,6 +13,13 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 space(2);
+        @include mq(sm) {
+            padding: 0 space(2);
+        }
+        @include mq(lg) {
+            height: 96px;
+            padding: 0 space(2);
+        }
     }
     &__menu {
         flex: 1;
@@ -43,6 +53,9 @@
     .logo {
         max-width: 128px;
         line-height: 0;
+        @include mq(lg) {
+            max-width: 160px;
+        }
     }
 
     &--sticky {

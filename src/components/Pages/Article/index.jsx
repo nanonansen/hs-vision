@@ -6,7 +6,7 @@ import "nprogress/nprogress.css";
 import Prismic from "prismic-javascript";
 import { useParams } from "react-router-dom";
 
-import Client, { linkResolver } from "../../../prismicConfig";
+import Client from "../../../prismicConfig";
 
 import ArticleBody from "./ArticleBody";
 
@@ -29,21 +29,20 @@ const Article = () => {
     useEffect(() => {
         NProgress.start();
         setIsLoadingNewPage({ loading: false });
+        const fetchData = async () => {
+            const response = await Client.query(
+                Prismic.Predicates.at("my.article.uid", articleId)
+            );
+            if (response) {
+                setData([response.results[0]]);
+                setLastFetchedArticle(response.results[0].id);
+
+                setIsLoading(false);
+                NProgress.done();
+            }
+        };
         fetchData();
     }, [articleId]);
-
-    const fetchData = async () => {
-        const response = await Client.query(
-            Prismic.Predicates.at("my.article.uid", articleId)
-        );
-        if (response) {
-            setData([response.results[0]]);
-            setLastFetchedArticle(response.results[0].id);
-
-            setIsLoading(false);
-            NProgress.done();
-        }
-    };
 
     // Add Eventlistener to listen for Scroll Events
     useEffect(() => {
@@ -53,10 +52,32 @@ const Article = () => {
 
     // Fetch new Article
     useEffect(() => {
-        if (!isFetching) return;
+        if (!isFetching || lastFetchedArticle === null) return;
 
-        fetchNextArticle();
+        fetchNextArticle(pageIndex); // eslint-disable-next-line
     }, [isFetching]);
+
+    const fetchNextArticle = async index => {
+        console.log("fetchNextArticle");
+
+        const response = await Client.query(
+            [
+                Prismic.Predicates.at("document.type", "article"),
+                Prismic.Predicates.not("document.id", lastFetchedArticle)
+            ],
+
+            { pageSize: 1, page: index + 1 }
+        );
+        if (response) {
+            let newData = response.results[0];
+
+            setData(prevState => [...prevState, { ...newData }]);
+            setPageIndex(prevState => prevState + 1);
+            setLastFetchedArticle(response.results[0].id);
+            setIsFetching(false);
+            setIsLoadingNewPage({ loading: false });
+        }
+    };
 
     function handleScroll() {
         if (
@@ -65,29 +86,9 @@ const Article = () => {
         )
             return;
         setIsFetching(true);
+
         setIsLoadingNewPage({ loading: true });
     }
-
-    const fetchNextArticle = async () => {
-        if (lastFetchedArticle === null) return;
-        const response = await Client.query(
-            [
-                Prismic.Predicates.at("document.type", "article"),
-                Prismic.Predicates.not("document.id", lastFetchedArticle)
-            ],
-
-            { pageSize: 1, page: pageIndex + 1 }
-        );
-        if (response) {
-            let newData = response.results[0];
-
-            setData(prevState => [...prevState, { ...newData }]);
-            setPageIndex(pageIndex + 1);
-            setLastFetchedArticle(response.results[0].id);
-            setIsFetching(false);
-            setIsLoadingNewPage({ loading: false });
-        }
-    };
 
     return (
         <div>

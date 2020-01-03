@@ -1,8 +1,9 @@
 .related-articles {
     min-height: 50vh;
-    padding-left: space(2);
-    padding-right: space(2);
+    margin-left: space(2);
+    margin-right: space(2);
     margin-top: space(8);
+    border-bottom: 1px solid $black;
 
     &__header {
         text-transform: uppercase;
@@ -33,22 +34,6 @@
             text-transform: uppercase;
             line-height: 1.1rem;
             letter-spacing: 0.3px;
-            // &::before {
-            //     position: absolute;
-            //     content: "...";
-            //     bottom: 2px;
-            //     right: 0;
-            //     z-index: 2;
-            // }
-            // &::after {
-            //     content: "";
-            //     position: absolute;
-            //     bottom: 3px;
-            //     right: 0;
-            //     width: 2rem;
-            //     height: 1rem;
-            //     background: white;
-            // }
         }
     }
 }

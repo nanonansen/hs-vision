@@ -2,15 +2,19 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: space(8);
-    background: transparent;
-    display: flex;
+    height: space(3);
+    background: $white;
+    display: block;
     justify-content: center;
     align-items: center;
+    background-image: url("https://jor.pensoft.net/i/simple_loading.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .article {
-    padding-bottom: space(8);
-    border-bottom: 1px solid $black;
+    padding-bottom: space(0);
+
     &__header {
         min-height: 50vh;
         display: flex;

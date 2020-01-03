@@ -19,10 +19,8 @@ const ArticleCarousel = ({ id }) => {
                 response.results[0].data.articles.map(el =>
                     ids.push(el.article.id)
                 );
-                console.log(response.results[0].data.articles);
 
                 if (ids.length) {
-                    console.log("ids", ids);
                 }
                 fetchData(ids);
             }
@@ -48,8 +46,6 @@ const ArticleCarousel = ({ id }) => {
                 </div>
                 <div className="article-carousel__items">
                     {data.map((article, index) => {
-                        console.log("article", article);
-
                         return (
                             <div className="article-carousel__item" key={index}>
                                 <div className="article-carousel__inner">

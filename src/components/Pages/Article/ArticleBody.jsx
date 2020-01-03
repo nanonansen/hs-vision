@@ -63,9 +63,7 @@ const ArticleBody = ({ content, loadNextPage }) => {
                         category={content.data.category}
                         currentArticleId={content.id}
                     />
-                    {loadNextPage && (
-                        <div className="nextPage-preloader">Load Next Page</div>
-                    )}
+                    {loadNextPage && <div className="nextPage-preloader"></div>}
                 </article>
             </CSSTransition>
         </TransitionGroup>
