@@ -4,6 +4,7 @@ body.noscroll {
 .navmenu {
     position: fixed;
     height: calc(100vh - 64px);
+    z-index: 3;
     // height: calc(100vh - 170px);
     width: 100%;
     background: $white;
@@ -28,5 +29,8 @@ body.noscroll {
         font-size: 13px;
         letter-spacing: 1px;
         text-transform: uppercase;
+        &.active {
+            background: red;
+        }
     }
 }

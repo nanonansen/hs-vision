@@ -7,7 +7,9 @@ import Header from "./Header";
 
 import Feed from "./Feed";
 import Article from "./Pages/Article";
-import ArticleCarousel from "./ArticleCarousel";
+import Product from "./Pages/Product";
+//import ArticleCarousel from "./ArticleCarousel";
+import Discover from "./Pages/Discover";
 
 function App() {
     return (
@@ -19,8 +21,12 @@ function App() {
                     <Route path="/article/:articleId">
                         <Article />
                     </Route>
-                    <Route path="/carousel">
-                        <ArticleCarousel />
+                    <Route path="/product/:productId">
+                        <Product />
+                    </Route>
+
+                    <Route path="/discover">
+                        <Discover />
                     </Route>
                     <Route path="/">
                         <Feed />

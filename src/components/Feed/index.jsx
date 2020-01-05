@@ -63,10 +63,31 @@ const Feed = () => {
                 <div className="preloader">(LOADING)</div>
             ) : (
                 <>
-                    <Marquee content={marqueeData} />
-                    <div className="featured">
+                    <main className="feed">
+                        <Marquee content={marqueeData} />
+                        <div className="featured">
+                            <Container>
+                                {dataFeatured.map((item, index) => {
+                                    return (
+                                        <LazyLoad
+                                            throttle={100}
+                                            height={560}
+                                            key={index}
+                                        >
+                                            <Card
+                                                type={item.type}
+                                                content={item.data}
+                                                uid={item.uid}
+                                                id={item.id}
+                                            />
+                                        </LazyLoad>
+                                    );
+                                })}
+                            </Container>
+                        </div>
+                        {/* <Marquee content={marqueeData} /> */}
                         <Container>
-                            {dataFeatured.map((item, index) => {
+                            {data.map((item, index) => {
                                 return (
                                     <LazyLoad
                                         throttle={100}
@@ -83,26 +104,7 @@ const Feed = () => {
                                 );
                             })}
                         </Container>
-                    </div>
-                    {/* <Marquee content={marqueeData} /> */}
-                    <Container>
-                        {data.map((item, index) => {
-                            return (
-                                <LazyLoad
-                                    throttle={100}
-                                    height={560}
-                                    key={index}
-                                >
-                                    <Card
-                                        type={item.type}
-                                        content={item.data}
-                                        uid={item.uid}
-                                        id={item.id}
-                                    />
-                                </LazyLoad>
-                            );
-                        })}
-                    </Container>
+                    </main>
                 </>
             )}
         </>

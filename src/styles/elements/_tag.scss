@@ -1,12 +1,13 @@
 .tag {
-    background: $black;
-    color: $white;
+    background: transparent;
+    color: $black;
+    border: 1px solid $black;
     display: inline-block;
-    padding: 0.2em 0.6em 0.3em 0.6em;
+    padding: 0.2em 0.8em 0.3em 0.8em;
     margin-right: space(1);
-    border-radius: 2px;
-
-    scroll-snap-align: start;
+    border-radius: 40px;
+    white-space: nowrap;
+    scroll-snap-align: center;
     &:last-child {
         margin-right: space(8);
     }

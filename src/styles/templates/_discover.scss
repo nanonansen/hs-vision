@@ -1,0 +1,11 @@
+.discover {
+    .grid {
+        margin: 0 1px;
+    }
+    .grid__item {
+        padding: 1px 1px;
+        &:nth-child(5n) {
+            width: 100%;
+        }
+    }
+}

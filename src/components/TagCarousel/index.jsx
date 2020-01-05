@@ -5,10 +5,11 @@ import Tag from "../Tag";
 const TagCarousel = () => {
     return (
         <div className="tag-carousel">
-            <Tag>News</Tag>
-            <Tag>Features</Tag>
-            <Tag>Style</Tag>
-            <Tag>Frontpage</Tag>
+            <Tag>Palace</Tag>
+            <Tag>Winter Coats</Tag>
+            <Tag>Supreme</Tag>
+            <Tag>Ader Error</Tag>
+            <Tag>Yeezy</Tag>
             <Tag>Colette</Tag>
         </div>
     );

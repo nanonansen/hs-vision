@@ -1,0 +1,23 @@
+.product {
+    &__header {
+        min-height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 space(3);
+    }
+    &__title {
+        font-size: $fs-xl;
+        font-weight: bold;
+        font-stretch: condensed;
+        text-transform: uppercase;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: space(1);
+    }
+    &__brand {
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+}

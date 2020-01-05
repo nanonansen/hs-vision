@@ -3,11 +3,13 @@
 @import "./base/variables";
 @import "./base/mixins";
 @import "./base/typography";
+@import "./base/grid";
 
 @import "./elements/image";
 @import "./elements/tag";
 @import "./elements/vertical";
 @import "./elements/icon";
+@import "./elements/button";
 
 @import "./components/taglist";
 @import "./components/container";
@@ -25,3 +27,8 @@
 @import "./components/article";
 @import "./components/preloader";
 @import "./components/related-articles";
+
+// TEMPLATES
+@import "./templates/discover";
+@import "./templates/feed";
+@import "./templates/product";

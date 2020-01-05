@@ -17,6 +17,10 @@ const Header = () => {
             document.body.classList.remove("noscroll");
         }
     };
+    const handleNavItemClick = () => {
+        setShowNav(!showNav);
+        document.body.classList.remove("noscroll");
+    };
 
     return (
         <Headroom>
@@ -41,7 +45,10 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
-                <NavMenu showNav={showNav} />
+                <NavMenu
+                    showNav={showNav}
+                    handleNavItemClick={handleNavItemClick}
+                />
             </header>
         </Headroom>
     );
