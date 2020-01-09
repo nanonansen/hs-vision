@@ -1,6 +1,10 @@
 import React from "react";
-const Tag = ({ children }) => {
-    return <div className="tag">{children}</div>;
+const Tag = props => {
+    return (
+        <div onClick={props.onClick} className="tag">
+            {props.children}
+        </div>
+    );
 };
 
 export default Tag;

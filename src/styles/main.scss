@@ -10,6 +10,7 @@
 @import "./elements/vertical";
 @import "./elements/icon";
 @import "./elements/button";
+@import "./elements/input";
 
 @import "./components/taglist";
 @import "./components/container";
@@ -27,8 +28,11 @@
 @import "./components/article";
 @import "./components/preloader";
 @import "./components/related-articles";
+@import "./components/product-filter";
+@import "./components/product-search";
 
 // TEMPLATES
 @import "./templates/discover";
 @import "./templates/feed";
 @import "./templates/product";
+@import "./templates/product-modal";

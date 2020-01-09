@@ -10,15 +10,10 @@ import Marquee from "../Marquee";
 
 import Client from "../../prismicConfig";
 
-const marqueeData = {
-    content_type: "text",
-    text: "Meet Julia Fox, the Diamond in the Rough From Uncut Gems +++",
-    direction: "toLeft"
-};
-
 const Feed = () => {
     const [data, setData] = useState([]);
     const [dataFeatured, setDataFeatured] = useState([]);
+    const [dataMarquee, setDataMarquee] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -46,15 +41,26 @@ const Feed = () => {
                 { orderings: "[document.last_publication_date desc]" }
             );
             if (response) {
-                console.log("response", response.results);
+                //console.log("response", response.results);
 
                 setDataFeatured(response.results);
                 // setIsLoading(false);
                 // NProgress.done();
             }
         };
+        const fetchMarqueeData = async () => {
+            const response = await Client.query(
+                Prismic.Predicates.at("document.type", "marquee")
+            );
+            if (response) {
+                console.log("marquee response", response.results[0]);
+                setDataMarquee(response.results);
+            }
+        };
         fetchFeatured();
         fetchData();
+
+        fetchMarqueeData();
     }, []);
 
     return (
@@ -64,7 +70,9 @@ const Feed = () => {
             ) : (
                 <>
                     <main className="feed">
-                        <Marquee content={marqueeData} />
+                        {dataMarquee.map((marquee, index) => (
+                            <Marquee content={marquee.data} key={index} />
+                        ))}
                         <div className="featured">
                             <Container>
                                 {dataFeatured.map((item, index) => {

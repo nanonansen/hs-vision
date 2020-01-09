@@ -6,6 +6,7 @@ import Prismic from "prismic-javascript";
 
 import Client from "../../../prismicConfig";
 import Image from "../../Image";
+import Button from "../../Button";
 
 const Product = () => {
     const [data, setData] = useState({});
@@ -40,9 +41,10 @@ const Product = () => {
                 <p className="product__brand">{data.data.brand}</p>
             </div>
             <Image src={data.data.featured_image.url} crop={"&fit=clamp"} />
-            <button className="button button--primary button--sticky">
-                Buy at {data.data.brand}
-            </button>
+
+            <Button className={"button button--primary button--sticky"}>
+                Buy Now
+            </Button>
         </div>
     );
 };

@@ -1,0 +1,62 @@
+.product-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: calc(100%);
+    z-index: 8;
+    width: 100%;
+    background: $white;
+    transform: translateX(0%);
+    opacity: 0;
+
+    transition: opacity 400ms cubic-bezier(0.23, 1, 0.32, 1),
+        transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    .button {
+        border: none;
+        width: 100%;
+        border-bottom: 1px solid $black;
+        margin-bottom: space(4);
+    }
+    &__input {
+        padding: 0 space(2);
+        margin-bottom: space(8);
+    }
+
+    &__recommendations {
+        padding: 0 space(2);
+        text-transform: uppercase;
+
+        h2 {
+            margin-bottom: space(2);
+        }
+
+        span {
+            display: block;
+            margin-bottom: space(2);
+        }
+    }
+}
+
+// Search Panel
+.searchpanel-enter {
+    opacity: 0;
+}
+.searchpanel-enter-active {
+    opacity: 1;
+}
+.searchpanel-enter-done {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.searchpanel-exit {
+    opacity: 1;
+}
+
+.searchpanel-exit-active {
+    opacity: 1;
+}
+.searchpanel-exit-done {
+    opacity: 0;
+}

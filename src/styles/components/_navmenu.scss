@@ -30,7 +30,7 @@ body.noscroll {
         letter-spacing: 1px;
         text-transform: uppercase;
         &.active {
-            background: red;
+            background: $light-gray;
         }
     }
 }

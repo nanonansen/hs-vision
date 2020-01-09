@@ -13,17 +13,21 @@
 }
 
 .ticker {
-    margin-bottom: space(0);
-
-    border-top: 1px solid $black;
-    border-bottom: 1px solid $black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 
     &__element {
+        height: 48px;
         p {
-            font-size: 14px;
-            text-transform: uppercase;
-            white-space: nowrap;
-            margin: 12px 4px 14px 0px;
+            margin: 14px 0px 12px 0px;
+            span {
+                margin-right: 32px;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                white-space: nowrap;
+                height: 19px;
+            }
         }
     }
 }

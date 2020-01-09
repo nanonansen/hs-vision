@@ -7,8 +7,4 @@
     margin-right: space(1);
     border-radius: 40px;
     white-space: nowrap;
-    scroll-snap-align: center;
-    &:last-child {
-        margin-right: space(8);
-    }
 }

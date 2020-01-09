@@ -67,3 +67,15 @@
         transform: translateY(-64px);
     }
 }
+
+.headroom {
+    z-index: 6 !important;
+    &-wrapper {
+        transition: transform 200ms;
+        &.isHidden {
+            transform: translateY(-100%);
+            visibility: hidden;
+            height: 0 !important;
+        }
+    }
+}

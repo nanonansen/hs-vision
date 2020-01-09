@@ -7,7 +7,7 @@ import Image from "../../Image";
 import RelatedArticles from "../../RelatedArticles";
 
 const ArticleBody = ({ content, loadNextPage }) => {
-    //console.log("ArticleBody Content", content);
+    console.log("ArticleBody Content", content);
 
     return (
         <TransitionGroup>
@@ -17,7 +17,12 @@ const ArticleBody = ({ content, loadNextPage }) => {
                         <h1 className="article__title">
                             {content.data.article_title[0].text}
                         </h1>
-                        <Vertical>{content.data.category}</Vertical>
+                        <Vertical>( {content.data.category} )</Vertical>
+                        {content.data.author && (
+                            <span className="article__author">
+                                Words: {content.data.author}
+                            </span>
+                        )}
                     </div>
                     <div className="article__content">
                         {content.data.body.map((slice, index) => {

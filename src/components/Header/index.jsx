@@ -5,9 +5,12 @@ import Logo from "../Logo";
 import NavMenu from "../NavMenu";
 import Icon from "../Icon";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router";
 
-const Header = () => {
+const Header = ({ hideHeader }) => {
     const [showNav, setShowNav] = useState(false);
+    let location = useLocation();
+    console.log("location", location);
 
     const handleNavMenu = () => {
         setShowNav(!showNav);

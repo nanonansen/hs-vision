@@ -1,35 +1,42 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import Prismic from "prismic-javascript";
 import Client from "../../prismicConfig";
 
 import Image from "../Image";
 
-const ArticleCarousel = ({ id }) => {
-    const [data, setData] = useState([]);
+const ArticleCarousel = ({ id, uid }) => {
+    const [data, setData] = useState({ title: "", results: [] });
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         let ids = [];
+        let title = "";
         const fetchIds = async () => {
             const response = await Client.query(
                 Prismic.Predicates.at("document.id", id)
             );
 
             if (response) {
+                console.log(
+                    "fetchIds",
+                    response.results[0].data.carousel_title[0].text
+                );
+
                 response.results[0].data.articles.map(el =>
                     ids.push(el.article.id)
                 );
 
-                if (ids.length) {
-                }
-                fetchData(ids);
+                title = response.results[0].data.carousel_title[0].text;
+                fetchData(ids, title);
             }
         };
-        const fetchData = async ids => {
+        const fetchData = async (ids, title) => {
             const res = await Client.getByIDs(ids);
             if (res) {
-                console.log(res.results);
-                setData(res.results);
+                console.log("ArticleCarousel Response", res.results);
+                setData({ title: title, results: res.results });
                 setIsLoading(false);
             }
         };
@@ -41,19 +48,23 @@ const ArticleCarousel = ({ id }) => {
             <div className="article-carousel">
                 <div className="article-carousel__header">
                     <h2 className="article-carousel__title">
-                        The Highsnobiety <br /> Holiday Gift Guide 2019
+                        {data && data.title}
                     </h2>
                 </div>
                 <div className="article-carousel__items">
-                    {data.map((article, index) => {
+                    {data.results.map((article, index) => {
                         return (
                             <div className="article-carousel__item" key={index}>
-                                <div className="article-carousel__inner">
-                                    <Image
-                                        src={article.data.featured_image.url}
-                                        crop={"crop"}
-                                    />
-                                </div>
+                                <Link to={`/${article.type}/${article.uid}`}>
+                                    <div className="article-carousel__inner">
+                                        <Image
+                                            src={
+                                                article.data.featured_image.url
+                                            }
+                                            crop={"crop"}
+                                        />
+                                    </div>
+                                </Link>
                             </div>
                         );
                     })}

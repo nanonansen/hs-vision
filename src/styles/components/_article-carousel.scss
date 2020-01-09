@@ -1,7 +1,5 @@
 .article-carousel {
     background: $white;
-    min-height: 50vh;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     @include mq(sm) {

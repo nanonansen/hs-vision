@@ -10,34 +10,35 @@ import CardMeta from "./CardMeta";
 import ArticleCarousel from "../ArticleCarousel";
 
 const Card = ({ type, content, uid, id }) => {
-    console.log(content.thumbnail_type);
+    //console.log("content", content);
 
     switch (type) {
         case "article":
             return (
                 <div className="grid__item grid__item--article">
                     <CardWrapper type={content.thumbnail_type}>
-                        <Link to={`/article/${uid}`}>
-                            {Object.keys(content.featured_image).length !==
-                            0 ? (
-                                <>
+                        {content.thumbnail_type === "article" ? (
+                            <>
+                                <Link to={`/article/${uid}`}>
                                     <Image
                                         src={content.featured_image.url}
                                         alt={content.featured_image.alt}
                                     />
-                                    <CardMeta
-                                        title={content.article_title[0].text}
-                                        category={content.category}
-                                    />
-                                </>
-                            ) : (
+                                </Link>
+                                <CardMeta
+                                    title={content.article_title[0].text}
+                                    category={content.category}
+                                />
+                            </>
+                        ) : (
+                            <Link to={`/article/${uid}`}>
                                 <CardMeta
                                     title={content.article_title[0].text}
                                     category={content.category}
                                     quote
                                 />
-                            )}
-                        </Link>
+                            </Link>
+                        )}
                     </CardWrapper>
                 </div>
             );
@@ -46,7 +47,7 @@ const Card = ({ type, content, uid, id }) => {
             return (
                 <div className="grid__item grid__item--article-carousel">
                     <CardWrapper type={type}>
-                        <ArticleCarousel id={id} />
+                        <ArticleCarousel id={id} uid={uid} />
                     </CardWrapper>
                 </div>
             );

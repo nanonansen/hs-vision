@@ -30,7 +30,15 @@
         text-transform: uppercase;
         line-height: 1;
         text-align: center;
-        margin-bottom: space(4);
+        margin-bottom: space(3);
+    }
+    .vertical {
+        margin-bottom: space(0.5);
+    }
+    &__author {
+        text-transform: uppercase;
+        font-style: italic;
+        letter-spacing: 0.4px;
     }
     &__content {
         p {

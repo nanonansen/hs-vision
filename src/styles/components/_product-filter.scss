@@ -1,0 +1,97 @@
+.product-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: calc(100%);
+    z-index: 8;
+    width: 100%;
+    background: $white;
+    //border-top: 1px solid $black;
+    transform: translateX(0%);
+    opacity: 0;
+    transition: opacity 400ms cubic-bezier(0.23, 1, 0.32, 1),
+        transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    .button {
+        width: 100%;
+        border: none;
+    }
+    &__content {
+        //border-top: 1px solid $black;
+    }
+    &__row {
+        border-top: 1px solid $black;
+        padding: space(2) space(2) space(4) space(2);
+        max-height: 52px;
+        overflow: hidden;
+
+        &.isOpen {
+            max-height: 3000px;
+        }
+
+        .filter-title {
+            margin-bottom: space(2);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filter-item {
+            margin-bottom: space(1);
+        }
+    }
+}
+
+// Filter Panel
+.filterpanel-enter {
+    opacity: 0;
+}
+.filterpanel-enter-active {
+    opacity: 1;
+}
+.filterpanel-enter-done {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.filterpanel-exit {
+    opacity: 1;
+}
+
+.filterpanel-exit-active {
+    opacity: 1;
+}
+.filterpanel-exit-done {
+    opacity: 0;
+}
+
+// Filter Button
+.filterbutton-enter {
+    opacity: 1;
+}
+.filterbutton-enter-active {
+    opacity: 1;
+    transition: opacity 400ms;
+}
+.filterbutton-enter-done {
+    opacity: 1;
+}
+
+.filterbutton-exit {
+    opacity: 1;
+    transition: opacity 400ms;
+}
+
+.filterbutton-exit-active {
+    opacity: 1;
+
+    transition: opacity 400ms;
+}
+.filterbutton-exit-done {
+    opacity: 1;
+}

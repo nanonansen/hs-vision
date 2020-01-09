@@ -1,51 +1,41 @@
 import React from "react";
 import Ticker from "react-ticker";
+import { Link } from "react-router-dom";
 
 const Marquee = ({ content }) => {
-    console.log("content", content);
-
-    switch (content.content_type) {
-        case "text":
-            return (
-                <Ticker
-                    className="marquee"
-                    mode="chain"
-                    direction={content.direction}
-                    speed={3}
-                >
-                    {() => (
-                        <>
-                            <p>{content.text}</p>
-                        </>
-                    )}
-                </Ticker>
-            );
-        case "image":
-            return (
-                <div className="marquee--image">
-                    <Ticker
-                        className="marquee--image"
-                        mode="chain"
-                        speed={3}
-                        offset={"100%"}
-                        direction={content.direction}
-                    >
-                        {() => (
+    return (
+        <div
+            className="marquee-container"
+            style={{ backgroundColor: `${content.marquee_background_color}` }}
+        >
+            <Ticker
+                mode="smooth"
+                direction={content.direction}
+                speed={4}
+                style={{ background: "blue" }}
+            >
+                {() => (
+                    <p>
+                        {!content.marquee_link.link_type === "Any" ? (
                             <>
-                                <img
-                                    width="100"
-                                    height="70"
-                                    src={content.imgUrl}
-                                    alt=""
-                                />
+                                <Link
+                                    to={`/article/${content.marquee_link.uid}`}
+                                >
+                                    <span>{content.marquee_text_1}</span>
+                                    <span>{content.marquee_text_2}</span>
+                                </Link>
+                            </>
+                        ) : (
+                            <>
+                                <span>{content.marquee_text_1}</span>
+                                <span>{content.marquee_text_2}</span>
                             </>
                         )}
-                    </Ticker>
-                </div>
-            );
-        default:
-            return null;
-    }
+                    </p>
+                )}
+            </Ticker>
+        </div>
+    );
 };
 
 export default Marquee;
